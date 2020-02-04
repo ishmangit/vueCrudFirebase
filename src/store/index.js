@@ -35,13 +35,20 @@ export default new Vuex.Store({
         let tarea = doc.data();
         tarea.id = doc.id;
         commit('setTarea', tarea);
-      })
+      });
     },
     editarTarea({commit}, tarea) {
       db.collection('tareas').doc(tarea.id).update({
         nombre: tarea.nombre
       }).then(() => {
         router.push({name: 'inicio'})
+      });
+    },
+    agregarTarea({commit}, nombre) {
+      db.collection('tareas').add({
+        nombre: nombre
+      }).then(doc => {
+        router.push({ name: 'inicio' });
       });
     }
   }

@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>Lista de tareas</h1>
+    <router-link :to="{ name: 'agregar'}">
+      <button>Agregar</button>
+    </router-link>
     <ul>
       <li v-for="item of tareas" :key="item.id">
         {{ item.nombre }}

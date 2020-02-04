@@ -3,7 +3,7 @@
         <h1>Editar</h1>
         <form @submit.prevent="editarTarea(tarea)">
             <input type="text" v-model="tarea.nombre">
-            <button>Editar</button>
+            <button type="submit">Editar</button>
         </form>
     </div>
 </template>
